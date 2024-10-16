@@ -10,6 +10,10 @@
 #include <cassert>
 #include <cstdlib> // For rand()
 
+
+//in this version, code is working ut some points not checked.
+// version not checked yet.
+// vertices with another amount not checked yet.
 void OnResize(GLFWwindow* window, int width, int height);
 void OnInput(GLFWwindow* window);
 
