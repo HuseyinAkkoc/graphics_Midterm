@@ -10,10 +10,18 @@
 #include <cassert>
 #include <cstdlib> // For rand()
 
-
+//3rd commit.
 //in this version, code is working ut some points not checked.
 // version not checked yet.
 // vertices with another amount not checked yet.
+
+//4th commit.
+// version is working properly.
+ // tried doing other than 30000 vertices.// TRIED// WORKED.
+// swap buffers line fixed.
+
+
+
 void OnResize(GLFWwindow* window, int width, int height);
 void OnInput(GLFWwindow* window);
 
@@ -99,8 +107,8 @@ using Vertices = std::vector<Vertex>;
 int main() {
     glfwInit();
     // Try with 3.3 and 4.6 version// 3.3 is working//4.35pm//
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
@@ -130,7 +138,7 @@ int main() {
     };
 
     // Generate 30,000 vertices of the Sierpiński triangle
-    // try doing other than 30000 vertices. Not tried yet.
+    // try doing other than 30000 vertices. Not tried yet.// TRIED// WORKED..
     Vertices vertices(30000);
     Vertex currentVertex = { {0.0f, 0.0f, 0.0f}, {1.0f, 1.0f, 1.0f} }; // Initial vertex
     for (int i = 0; i < 30000; i++) {
