@@ -19,9 +19,13 @@
 // version is working properly.
  // tried doing other than 30000 vertices.// TRIED// WORKED.
 // swap buffers line fixed.
+// Don't forget the bring screen size back to default.
+// Don't forget the bring  vertices amount  back to default.
 
-
-
+// Final commit.
+// Link2019 error fixed. Solution: Glad.h file restarted.
+// Screen size is default again. 
+//  Vertices amount is default again. 
 void OnResize(GLFWwindow* window, int width, int height);
 void OnInput(GLFWwindow* window);
 
@@ -55,14 +59,14 @@ GLuint CreateShader(GLint type, const char* path) {
             break;
         }
 
-        // Compile text as a shader
+        // Compile text as a shader.
         std::string str = stream.str();
         const char* src = str.c_str();
         shader = glCreateShader(type);
         glShaderSource(shader, 1, &src, NULL);
         glCompileShader(shader);
 
-        // Check for compilation errors
+        // Check for compilation Errors
         GLint success;
         GLchar infoLog[512];
         glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
@@ -130,7 +134,7 @@ int main() {
     GLuint shaderDefault = CreateProgram(vsDefault, fsDefault);
     glUseProgram(shaderDefault);
 
-    // Define the initial triangle vertices and colors
+    // Define the initial triangle vertices and colors.
     Vertex triangle[3] = {
         {{-1.0f, -1.0f, 0.0f}, {1.0f, 0.0f, 0.0f}}, // Red
         {{1.0f, -1.0f, 0.0f}, {0.0f, 1.0f, 0.0f}}, // Green
@@ -157,10 +161,10 @@ int main() {
     glBindVertexArray(vao);
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
-    // Upload the vertex data to the GPU
+   
     glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex), vertices.data(), GL_STATIC_DRAW);
 
-    // Specify the vertex attribute layout
+
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, position));
     glEnableVertexAttribArray(0);
 
